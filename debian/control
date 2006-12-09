@@ -1,0 +1,22 @@
+Source: gkrellshoot
+Section: x11
+Priority: optional
+Maintainer: Andreas "Jimmy" Gredler <jimmy@g-tec.co.at>
+Build-Depends: debhelper (>= 4.0.0), pkg-config, libgtk2.0-dev, gkrellm (>= 2.2.7-6)
+Standards-Version: 3.7.2
+
+Package: gkrellshoot
+Enhances: gkrellm
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, gkrellm (>= 2.2.7-6), imagemagick
+Recommends: xscreensaver
+Description: Plugin for gkrellm to lock the screen and make screenshots
+ This plugin gives easy access to screenlock and screenshot facilities.
+ For screenshot it uses ImageMagick. The plugin displays animations
+ (like a screensaver) along with 'Lock' and 'Shoot' buttons to be
+ clicked on. With the 'Shoot' button one can either grab a window,
+ selected area or the whole screen. It's also possible to delay the
+ screenshot by a given number of seconds. Another feature is that
+ grabbed images can be viewed with your preferred image viewer. Pressing
+ 'Lock' button will lock the screen and start your screen saver. (You
+ need to have xscreensaver installed to use this feature.)
