@@ -1,0 +1,44 @@
+0.4.4   Fri December 8 2008
+    * Added Date Format option to append to filename.
+    * Minor Help text cleanup.
+
+0.4.3   Fri November 19 2004
+    * Added option to have Lock or Shoot or Both Buttons.
+
+0.4.2   Wed October 27 2004
+    * Applied Jack Coates <jack@monkeynoodle.org> grayscale Patch
+     (Thanks).
+    * Added option Save Location to save images in specified directory
+      instead of home.
+    * If you are using View Image After Click option , you will need
+      ImageMagick-5.5.x.
+
+0.4.1   Sat August 17 2002
+    * Bug Fix Release - Now when chart width is increased plugin will
+      update chart properly.
+
+0.4.01 Wed April 25 2002
+    * Bug Fix Release - Fixed changing themes crashing GkrellM2.0. Please
+      upgrade.
+
+0.4 Wed April 24 2002
+    * Ported to GkrellM2.0, nothing else was changed.
+
+0.3.1   Mon April 22 2002
+    * Added 3 more animations ( scanner, colorbars & rotating star)
+    * Fixed disable animation. ( now choosing  0 panels will disable animation)
+
+0.3   Fri April 12 2002
+    * Upto 3 Animation panel configurable.
+    * Configurable to cycle through animations.
+    * Added with Window Frame option to Screen Shoot. Thanks
+      to Hiroyuki Ikezoe <zoe@kasumi.sakura.ne.jp> for the
+      patch.
+    * Middle-Click will cycle through animations.
+    * Right-Click will open configuration window.
+
+0.2   Thu Aug 16 2001
+    * added Animation.
+
+0.1   Fri Aug 10 2001
+    * first release of GKRellShoot

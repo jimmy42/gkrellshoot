@@ -1,0 +1,34 @@
+GkrellShoot:	GKrellM Shoot Plugin
+Author:         M.R.Muthu Kumar <m_muthukumar@users.sourceforge.net>
+
+install:
+
+    make
+    make install (as root)
+    make userinstall (Installs at ~/.gkrellm2/plugins directory))
+
+require:
+
+    -  GkrellM2.0 or greater.
+
+    - ImageMagick 
+
+comments : I wrote this so that I can have quick access to screen lock
+	   as well as screen shoot. Hope it will be useful for you.
+
+	   Added animation to this plugin using 
+	   Tom Gilbert's ( http://linuxbrit.co.uk/ ) routines. Right now
+	   I have about 11 animations of which I like 'Mesh' and
+	   'Rotating Star'
+
+gkrellshoot is copyright (c) 2002 by M.R.Muthu Kumar.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2   
+of the License, or (at your option) any later version.
+ 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
