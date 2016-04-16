@@ -1,2 +1,2 @@
-version=2
-http://heanet.dl.sourceforge.net/sourceforge/gkrellshoot/gkrellshoot-(.*)\.tar\.gz debian	uupdate
+version=3
+http://sf.net/gkrellshoot/gkrellshoot-(\d\S*)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))

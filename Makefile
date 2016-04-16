@@ -18,22 +18,7 @@ clean:
 gkrellshoot.o: gkrellshoot.c
 
 install:
-	if [ -d /usr/local/lib/gkrellm2/plugins/ ] ; then \
-		install -c -s -m 644 gkrellshoot.so /usr/local/lib/gkrellm2/plugins/ ; \
-	elif [ -d /usr/lib/gkrellm2/plugins/ ] ; then \
-        	install -c -s -m 644 gkrellshoot.so /usr/lib/gkrellm2/plugins/ ; \
-	else \
-		install -D -c -s -m 644 gkrellshoot.so /usr/lib/gkrellm2/plugins/gkrellshoot.so ; \
-	fi
-userinstall:
-	if [ -d $(HOME)/.gkrellm2/plugins/ ] ; then \
-		install -c -s -m 644 gkrellshoot.so $(HOME)/.gkrellm2/plugins/ ; \
-	else \
-		install -D -c -s -m 644 gkrellshoot.so $(HOME)/.gkrellm2/plugins/gkrellshoot.so ; \
-	fi
+	install -D -p -s -m 644 gkrellshoot.so $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellshoot.so
 
 uninstall:
-	rm -f /usr/local/lib/gkrellm2/plugins/gkrellshoot.so
-	rm -f /usr/lib/gkrellm2/plugins/gkrellshoot.so
-	rm -f $(HOME)/.gkrellm2/plugins/gkrellshoot.so
-
+	rm -f $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellshoot.so
