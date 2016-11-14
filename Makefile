@@ -1,16 +1,17 @@
 GTK_INCLUDE = `pkg-config gtk+-2.0 --cflags`
 GTK_LIB = `pkg-config gtk+-2.0 --libs`
 
-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) 
-LIBS = $(GTK_LIB) 
-LFLAGS = -shared
+FLAGS = -O2 -Wall $(GTK_INCLUDE) 
+LIBS = $(GTK_LIB)
+CFLAGS += -fPIC
+LDFLAGS += -shared
 
-CC = gcc $(CFLAGS) $(FLAGS)
+CC = gcc $(FLAGS)
 
 OBJS = gkrellshoot.o
 
 gkrellshoot.so: $(OBJS)
-	$(CC) $(OBJS) -o gkrellshoot.so $(LFLAGS) $(LIBS) 
+	$(CC) $(OBJS) -o gkrellshoot.so $(LDFLAGS) $(LIBS) 
 
 clean:
 	rm -f *.o core *.so* *.bak *~
