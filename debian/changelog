@@ -1,3 +1,15 @@
+gkrellshoot (0.4.4-2) unstable; urgency=medium
+
+  * Changed maintainer's email address.
+  * Bumped debhelper compat to 9 (Closes: #817478).
+  * Enabled Debian hardening options.
+  * Rewrote debian/rules to use the newer simpler format.
+  * Changed Makefile to use DESTDIR variable.
+  * Updated watch file to use the new format for SourceForge.
+  * Bumped standards version to 3.9.7.
+
+ -- Andreas "Jimmy" Gredler <jimmy@grml.org>  Sun, 13 Nov 2016 18:55:43 -0800
+
 gkrellshoot (0.4.4-1) unstable; urgency=low
 
   * New upstream release (closes Bug #400592).
