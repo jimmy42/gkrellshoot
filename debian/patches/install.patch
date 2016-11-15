@@ -1,0 +1,53 @@
+Description: Patched Makefile to be FHS compliant and rewrote CFLAGS and
+LDFLAGS for hardening.
+Author: Andreas "Jimmy" Gredler <jimmy@grml.org>
+--- a/Makefile
++++ b/Makefile
+@@ -1,16 +1,17 @@
+ GTK_INCLUDE = `pkg-config gtk+-2.0 --cflags`
+ GTK_LIB = `pkg-config gtk+-2.0 --libs`
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) 
+-LIBS = $(GTK_LIB) 
+-LFLAGS = -shared
++FLAGS = -O2 -Wall $(GTK_INCLUDE) 
++LIBS = $(GTK_LIB)
++CFLAGS += -fPIC
++LDFLAGS += -shared
+ 
+-CC = gcc $(CFLAGS) $(FLAGS)
++CC = gcc $(FLAGS)
+ 
+ OBJS = gkrellshoot.o
+ 
+ gkrellshoot.so: $(OBJS)
+-	$(CC) $(OBJS) -o gkrellshoot.so $(LFLAGS) $(LIBS) 
++	$(CC) $(OBJS) -o gkrellshoot.so $(LDFLAGS) $(LIBS) 
+ 
+ clean:
+ 	rm -f *.o core *.so* *.bak *~
+@@ -18,22 +19,7 @@
+ gkrellshoot.o: gkrellshoot.c
+ 
+ install:
+-	if [ -d /usr/local/lib/gkrellm2/plugins/ ] ; then \
+-		install -c -s -m 644 gkrellshoot.so /usr/local/lib/gkrellm2/plugins/ ; \
+-	elif [ -d /usr/lib/gkrellm2/plugins/ ] ; then \
+-        	install -c -s -m 644 gkrellshoot.so /usr/lib/gkrellm2/plugins/ ; \
+-	else \
+-		install -D -c -s -m 644 gkrellshoot.so /usr/lib/gkrellm2/plugins/gkrellshoot.so ; \
+-	fi
+-userinstall:
+-	if [ -d $(HOME)/.gkrellm2/plugins/ ] ; then \
+-		install -c -s -m 644 gkrellshoot.so $(HOME)/.gkrellm2/plugins/ ; \
+-	else \
+-		install -D -c -s -m 644 gkrellshoot.so $(HOME)/.gkrellm2/plugins/gkrellshoot.so ; \
+-	fi
++	install -D -p -s -m 644 gkrellshoot.so $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellshoot.so
+ 
+ uninstall:
+-	rm -f /usr/local/lib/gkrellm2/plugins/gkrellshoot.so
+-	rm -f /usr/lib/gkrellm2/plugins/gkrellshoot.so
+-	rm -f $(HOME)/.gkrellm2/plugins/gkrellshoot.so
+-
++	rm -f $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellshoot.so
