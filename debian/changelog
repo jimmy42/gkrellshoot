@@ -6,7 +6,8 @@ gkrellshoot (0.4.4-2) unstable; urgency=medium
   * Rewrote debian/rules to use the newer simpler format.
   * Changed Makefile to use DESTDIR variable.
   * Updated watch file to use the new format for SourceForge.
-  * Bumped standards version to 3.9.7.
+  * Bumped standards version to 3.9.8.
+  * Switched to quilt 3.0 format.
 
  -- Andreas "Jimmy" Gredler <jimmy@grml.org>  Sun, 13 Nov 2016 18:55:43 -0800
 
